@@ -1,0 +1,64 @@
+/* Apply box-sizing border-box model to all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Reset default margin and apply background gradient to the body */
+body {
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+/* Styling for the calculator grid */
+.calculator-grid {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem); /* 4 columns each with 6rem width */
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /* First row auto-sized, remaining rows 6rem each */
+}
+
+/* Styling for buttons inside the calculator grid */
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75); /* White background with transparency */
+}
+
+/* Hover and focus effects for buttons */
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+    background-color: rgba(255, 255, 255, .9); /* Lighter background color on hover or focus */
+}
+
+/* Spanning two columns for certain buttons */
+.span-two {
+    grid-column: span 2; /* Spanning two grid columns */
+}
+
+/* Styling for the output section */
+.output {
+    grid-column: 1 / -1; /* Spanning all columns */
+    background-color: rgba(0, 0, 0, .75); /* Dark background color with transparency */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Styling for previous operand */
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75); /* Semi-transparent white color */
+    font-size: 1.5rem;
+}
+
+/* Styling for current operand */
+.output .current-operand {
+    color: white; /* White color */
+    font-size: 2.5rem; /* Larger font size */
+}
